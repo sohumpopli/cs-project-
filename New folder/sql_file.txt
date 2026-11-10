@@ -1,0 +1,96 @@
+CREATE database school;
+
+
+use school;
+
+
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    password VARCHAR(50) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    attendance DECIMAL(5,2),
+    transport VARCHAR(50)
+);
+
+INSERT INTO students
+(student_id, password, name, attendance, transport)
+VALUES
+(101, 'student123', 'Rahul Sharma', 87.50, 'School Bus'),
+(102, 'abc123', 'Arjun Singh', 92.00, 'Private Vehicle'),
+(103, 'student103', 'Aman Verma', 92.50, 'School Bus'),
+(104, 'student104', 'Priya Mehta', 88.00, 'Self');
+
+
+CREATE TABLE teachers (
+    teacher_id INT PRIMARY KEY,
+    password VARCHAR(50) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    subject VARCHAR(50),
+    class VARCHAR(20),
+    email VARCHAR(100),
+    phone_number VARCHAR(15),
+    dob DATE,
+    qualification VARCHAR(100)
+);
+
+
+INSERT INTO teachers
+(teacher_id, password, name, subject, class, email,
+ phone_number, dob, qualification)
+VALUES
+(201, 'teacher123', 'Mr. Sharma', 'Physics', 'XII',
+ 'sharma@school.com', '9876543210', '1980-05-12',
+ 'M.Sc. Physics, B.Ed.'),
+
+(202, 'xyz123', 'Ms. Gupta', 'Chemistry', 'XI',
+ 'gupta@school.com', '9876543211', '1985-08-20',
+ 'M.Sc. Chemistry, B.Ed.'),
+
+(203, 'teacher203', 'Mr. Kapoor', 'Mathematics', 'XII',
+ 'kapoor@school.com', '9876543212', '1982-03-15',
+ 'M.Sc. Mathematics, B.Ed.'),
+
+(204, 'teacher204', 'Ms. Rao', 'Computer Science', 'XII',
+ 'rao@school.com', '9876543213', '1987-07-22',
+ 'MCA, B.Ed.');
+
+
+
+
+
+
+
+ CREATE TABLE grades (
+    grade_id INT PRIMARY KEY,
+    student_id INT,
+    subject VARCHAR(50),
+    marks INT,
+    maximum_marks INT
+);
+
+
+
+INSERT INTO grades
+(grade_id, student_id, subject, marks, maximum_marks)
+VALUES
+(1, 101, 'Physics', 85, 100),
+(2, 101, 'Chemistry', 90, 100),
+(3, 101, 'Mathematics', 92, 100),
+(4, 101, 'English', 88, 100),
+
+(5, 102, 'Physics', 78, 100),
+(6, 102, 'Chemistry', 84, 100),
+(7, 102, 'Biology', 89, 100),
+(8, 102, 'English', 91, 100),
+
+(9, 103, 'Physics', 87, 100),
+(10, 103, 'Chemistry', 91, 100),
+(11, 103, 'Mathematics', 89, 100),
+(12, 103, 'English', 85, 100),
+
+(13, 104, 'Physics', 82, 100),
+(14, 104, 'Chemistry', 88, 100),
+(15, 104, 'Biology', 94, 100),
+(16, 104, 'English', 90, 100);
+
+
